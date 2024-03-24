@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>{% block meta %}{% endblock %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<style>{% block style %}{% endblock style%}
+		body {
+			max-width: 50em;
+		}
+	</style>
+<head>
+<body>{% block content %}{% endblock %}
+	<footer>
+		<p>copyright &copy; Amal Irfan 2024</p>
+		<p>
+			<a href="https://github.com/AmalIrfan/Cherry/"
+			>source</a> is on github
+		</p>
+	</footer>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</body>
+{% comment %}
+vim: ts=2 sw=2
+{% endcomment %}

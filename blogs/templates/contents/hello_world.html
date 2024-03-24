@@ -1,7 +1,9 @@
 {% extends "contents/base.html"%}
+{% block meta %}
+	<title>Hello World</title>
+	<meta name="description" content="A blog about hello world programs"/>
+{% endblock meta %}
 {% block content %}
-<title>Hello World</title>
-<meta name="description" content="A blog about hello world programs"/>
 <h1>Hello World</h1>
 <hr>
 <ul>
@@ -36,3 +38,6 @@ msg_len = $ - msg
 </code>
 </pre>
 {% endblock content %}
+{% comment %}
+vim: ts=2 sw=2
+{% endcomment %}

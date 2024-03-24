@@ -1,18 +1,23 @@
 {% extends "blogs/base.html" %}
+{% block meta %}
+	<title>Amal's Blogs</title>
+{% endblock meta %}
 {% block content %}
-<title>Amal's Blogs</title>
-<h1>Blogs</h1>
-<hr>
-<ul>
-<li>up: <a href="../">Home</a></li>
-</ul>
-<p>
-The exciting first ever blog is here!
-</p>
-<ul>
-<li>
-<a href="hello_world/">Hello World</a>: A little blog
-showcasing a flat assembler program for amd64 linux
-</li>
-</ul>
+	<h1>Blogs</h1>
+	<hr>
+	<ul>
+		<li>up: <a href="../">Home</a></li>
+	</ul>
+	<p>
+		The exciting first ever blog is here!
+	</p>
+	<ul>
+		<li>
+			<a href="hello_world/">Hello World</a>: A little blog
+			showcasing a flat assembler program for amd64 linux
+		</li>
+	</ul>
 {% endblock content %}
+{% comment %}
+vim: ts=2 sw=2
+{% endcomment %}
