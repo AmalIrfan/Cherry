@@ -1,0 +1,74 @@
+{% extends "contents/base.html"%}
+{% block meta %}
+	<title>Reverse a String Using Stack</title>
+	<meta name="description" content="A blog about hello world programs"/>
+{% endblock meta %}
+{% block content %}
+<h1>Reversing with Stack</h1>
+<hr>
+<ul>
+	<li>up: <a href="../">Blogs</a></li>
+</ul>
+<p>
+The following is a program written in flat assembly, for
+amd64 linux
+</p>
+<pre>
+<code>format ELF64 executable
+segment readable executable
+entry _start
+
+BUF_CAP equ 20
+
+_start:
+    mov rax, 0
+    mov rdi, 0
+    mov rsi, buf
+    mov rdx, BUF_CAP
+    syscall
+
+    xor rax, rax
+.push_loop:
+    mov rbx, [buf + rax]
+    push rbx
+    inc rax
+    cmp rax, BUF_CAP
+    jne .push_loop
+
+    xor rax, rax
+.pop_loop:
+    pop rbx
+    mov [buf + rax], rbx
+    inc rax
+    cmp rax, BUF_CAP
+    jne .pop_loop
+
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, buf
+    mov rdx, BUF_CAP
+    syscall
+
+    mov rax, 60
+    mov rdi, 0
+    syscall
+
+segment readable writable
+
+buf:
+    rb BUF_CAP
+</code>
+</pre>
+<p>
+	This wil input a string from the user, then output the reverse
+	of it.
+</p>
+<p>
+	But there is a problem, this code just reverses the buffer, so
+	even if the string is only 10 bytes long, the output will be
+	20 bytes long (the size of the buffer).
+</p>
+{% endblock content %}
+{% comment %}
+vim: ts=2 sw=2
+{% endcomment %}
