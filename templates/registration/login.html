@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+{% block meta %}
+<!--<meta name="google-site-verification" content="Q6ug8IV1NgZO5OyiIzpeKfgUQ1AhIwzj2KS0QwSzUbs" />-->
+	<title>Login page</title>
+{% endblock meta %}
+{% block content %}
+	<h1>Login</h1>
+	<hr>
+	<form method="post">
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit">Log In</button>
+	</form>
+{% endblock content %}
+{% comment %}
+vim: ts=2 sw=2
+{% endcomment %}

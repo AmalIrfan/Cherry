@@ -1,6 +1,7 @@
 {% extends "pages/base.html" %}
 {% block meta %}
   <meta name="google-site-verification" content="Q6ug8IV1NgZO5OyiIzpeKfgUQ1AhIwzj2KS0QwSzUbs" />
+	<meta name="description" content="Powered by Django">
 	<title>Amal's Website</title>
 {% endblock meta %}
 {% block content %}
@@ -20,6 +21,16 @@
 		</li>
 		<li>
 			<a href="blogs/">Blogs</a>: great creations of yours truly
+		</li>
+		<li>
+		{% if user.is_authenticated %}
+			<form action="account/logout/" method="post">
+				{% csrf_token %}
+				<button type="submit" class="link-btn">Logout</button>: work in progress
+			</form>
+		{% else %}
+			<a rel="nofollow" href="account/login/">Login</a>: work in progress
+		{% endif %}
 		</li>
 		<li>
 			<a href="/">Home</a>: this page ofcourse

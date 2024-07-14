@@ -13,7 +13,7 @@ hr {
  border-color: var(--accent);
  border-style: solid;
 }
-a {
+a, .link-btn {
  color: var(--primary);
  &:visited {
   color: var(--secondary);
