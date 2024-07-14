@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = dc.config('CHERRY_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = dc.config('DEBUG') == 'true'
 
 ALLOWED_HOSTS = [dc.config('CHERRY_ALLOWED_HOSTS')]
 
