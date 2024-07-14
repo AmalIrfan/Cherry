@@ -52,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'pages.middleware.deny_non_admins.DenyNonAdmins',
 ]
 
 ROOT_URLCONF = 'cherry.urls'
